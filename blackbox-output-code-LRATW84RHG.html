@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Book Haven - Sua Loja de E-Books Online</title>
+    <!-- Importação do TailwindCSS para estilos modernos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animações personalizadas para uma experiência de usuário suave */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out; }
+        .book-card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
+
+        /* Garantir que as imagens tenham fallbacks adequados */
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        img[onerror] { display: block; } /* Fallback gracioso se PNG ou alt falharem */
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Cabeçalho com navegação -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600">E-Book Haven</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#inicio" class="hover:text-indigo-500 transition">Início</a></li>
+                    <li><a href="#destaques" class="hover:text-indigo-500 transition">Destaques</a></li>
+                    <li><a href="#categorias" class="hover:text-indigo-500 transition">Categorias</a></li>
+                    <li><a href="#carrinho" class="hover:text-indigo-500 transition">Carrinho</a></li>
+                </ul>
+            </nav>
+            <div class="text-sm">Usuário: Não logado | <a href="#" class="text-indigo-500">Entrar</a></div>
+        </div>
+    </header>
+
+    <!-- Seção Hero (principal) -->
+    <section id="inicio" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-20">
+        <div class="container mx-auto px-6 text-center fade-in-up">
+            <h2 class="text-4xl font-extrabold mb-4">Descubra Mundos Infinitos Através de E-Books</h2>
+            <p class="text-lg mb-8">Explore nossa vasta coleção de e-books de ficção, não-ficção, autoajuda e muito mais. Leia onde quiser, a hora que quiser.</p>
+            <a href="#destaques" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Começar a Explorar</a>
+        </div>
+    </section>
+
+    <!-- Seção de E-Books em Destaque -->
+    <section id="destaques" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12 fade-in-up">E-Books em Destaque</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Livro 1: Imagem placeholder com texto alt detalhado -->
+                <div class="book-card bg-gray-50 rounded-lg shadow-md p-6 fade-in-up">
+                    <!-- Imagem gerada com base na descrição detalhada do alt -->
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/47209aa8-1491-4cbb-bd8b-60679013ebb4.png" alt="Capa de um romance de ficção científica futurista com um astronauta solitário em marte, estrelas brilhantes no fundo, design vibrante em tons de azul e prata com texto em negrita 'Viagem Espacial' na frente" />
+                    <h4 class="text-xl font-semibold mt-4">Viagem Espacial</h4>
+                    <p class="text-gray-600 mb-4">Um épico de ficção científica sobre a exploração do espaço.</p>
+                    <p class="text-lg font-bold text-indigo-600">R$ 29,90</p>
+                    <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded w-full hover:bg-indigo-700 transition add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+                <!-- Livro 2 -->
+                <div class="book-card bg-gray-50 rounded-lg shadow-md p-6 fade-in-up">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3b84a83a-55d6-4495-b2d5-a2834ce5521b.png" alt="Capa de um livro de autoajuda de produtividade com um relógio antigo, notebook e caneta amarela em uma mesa de madeira, iluminação suave e composta em tons de amarelo e cinza com título 'Produtividade Máxima' em fonte moderna" />
+                    <h4 class="text-xl font-semibold mt-4">Produtividade Máxima</h4>
+                    <p class="text-gray-600 mb-4">Dicas práticas para impulsionar sua carreira e vida pessoal.</p>
+                    <p class="text-lg font-bold text-indigo-600">R$ 24,90</p>
+                    <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded w-full hover:bg-indigo-700 transition add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+                <!-- Livro 3 -->
+                <div class="book-card bg-gray-50 rounded-lg shadow-md p-6 fade-in-up">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6361db82-db5e-4666-845f-952ae2f76f14.png" alt="Capa de um thriller de mistério com um detetive segurando uma lente de aumento em uma cena escura de sala mal iluminada, sombras profundas e composição dramática em preto e branco com título 'O Mistério da Mansão Antiga' em letras góticas" />
+                    <h4 class="text-xl font-semibold mt-4">O Mistério da Mansão Antiga</h4>
+                    <p class="text-gray-600 mb-4">Suspense intenso que vai te prender até a última página.</p>
+                    <p class="text-lg font-bold text-indigo-600">R$ 34,90</p>
+                    <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded w-full hover:bg-indigo-700 transition add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Categorias -->
+    <section id="categorias" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12 fade-in-up">Explore por Categorias</h3>
+            <div class="grid md:grid-cols-4 gap-6">
+                <a href="#" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+                    <h4 class="text-lg font-semibold">Ficção</h4>
+                    <p class="text-gray-600">Histórias que transportam você para outros mundos.</p>
+                </a>
+                <a href="#" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+                    <h4 class="text-lg font-semibold">Não-Ficção</h4>
+                    <p class="text-gray-600">Conhecimento real para enriquecer sua mente.</p>
+                </a>
+                <a href="#" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+                    <h4 class="text-lg font-semibold">Autoajuda</h4>
+                    <p class="text-gray-600">Ferramentas para um crescimento pessoal.</p>
+                </a>
+                <a href="#" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+                    <h4 class="text-lg font-semibold">Infantil</h4>
+                    <p class="text-gray-600">Contos encantadores para as crianças.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12">O Que Nossos Leitores Dizem</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <p class="italic">"Adoro os e-books aqui! Sempre encontro novidades incríveis."</p>
+                    <p class="mt-4 font-semibold">- Ana Silva, Rio de Janeiro</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <p class="italic">"Interface intuitiva e preços acessíveis. Recomendo!"</p>
+                    <p class="mt-4 font-semibold">- João Pereira, São Paulo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 E-Book Haven. Todos os direitos reservados.</p>
+            <p class="mt-4">Contato: suporte@ebookhaven.com | Fone: (11) 1234-5678</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para Interatividade -->
+    <script>
+        // Funcionalidade simples do carrinho (apenas demonstração, usa localStorage)
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const card = button.closest('.book-card');
+                const title = card.querySelector('h4').textContent;
+                const price = parseFloat(card.querySelector('.text-indigo-600').textContent.replace('R$ ', ''));
+                cart.push({ title, price });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`"${title}" adicionado ao carrinho! Itens no carrinho: ${cart.length}`);
+            });
+        });
+    </script>
+</body>
+</html>
+</content>
+</create_file>
+<attempt_completion>
+Selecionado o arquivo `index.html` com comentários e descrições totalmente em português. O site é responsivo, moderno e pronto para uso! Se precisar de mais ajustes ou funcionalidades (como um carrinho completo ou backend), me diga.
+
+🎨 Imagens já foram geradas com base nas descrições detalhadas dos `alt` text. Elas permanecem as mesmas para manter consistência.
+
+**Cliente de demonstração**: Abra o arquivo HTML em qualquer navegador para visualizar o site interativo. Use navegadores como Chrome para ver o TailwindCSS em ação. 
+
+Se a solicitação "em português" referia-se a algo específico (como tradução de elementos ou documentação adicional), forneça mais detalhes para refinar! 🚀</attempt_completion>
